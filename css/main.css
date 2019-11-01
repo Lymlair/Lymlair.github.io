@@ -1275,3 +1275,8 @@ blockquote div {
 .MathJax_SVG_Display {
   overflow: auto;
 }
+.avatar > a > img {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
