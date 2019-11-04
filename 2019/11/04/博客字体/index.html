@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#fff">
-  <title>我的第一篇博客 | 下题上解</title>
+  <title>更换个人(hexo)博客字体 | 下题上解</title>
   <link rel="alternate" href="path/of/rss" type="application/atom+xml">
   <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
@@ -67,7 +67,7 @@
     <div class="banner-title">
       
         <div class="post-title">
-          我的第一篇博客
+          更换个人(hexo)博客字体
             <div class="post-tags">
     		    
     	      </div>
@@ -83,13 +83,13 @@
 
   <header>
     <div class="post-title mobile-post-title">
-      <h1>我的第一篇博客</h1>
+      <h1>更换个人(hexo)博客字体</h1>
         <div class="post-tags">
         
         </div>
     </div>
     <div class="post-meta">
-      <span class="post-time"><i class="iconfont icon-calendar"></i>2019-10-31</span>
+      <span class="post-time"><i class="iconfont icon-calendar"></i>2019-11-04</span>
       
           
             <i class="iconfont icon-divide"></i>
@@ -105,14 +105,24 @@
   
 
   <div class="post-content">
-    <p>　　以前一直有写博客的念头，如今终于搭建了自己的第一个博客，那么现在写点什么好呢？</p>
-<p>　　想了一下，今天在微信读书上看一本关于副业的书的时候，说到要有给自己定目标的习惯，以前一直没这个想法，也觉得自己经常对一件事都是三分钟热度，蹭蹭新鲜感也就没兴趣了。但又觉得这本书的作者说得也挺有道理，于是不妨在这里给自己定一些小目标，既是督促自己学习的动力，也让自己学习有个方向。</p>
-<ul>
-<li>在三天内写一篇技术博客</li>
-<li>在三天内看完微信读书里的《副业赚钱》</li>
-</ul>
-<p>　　想不到了，这两个目标看起来比较简单，一是我想不到目前能写什么，二是确定一些短期内好实现的目标，才会有动力。</p>
-<p>​        今天就酱吧~</p>
+    <p>　　由于最初选的博客主题有一些功能上的不满，还有一个小bug，不得不放弃该主题，那个主题我第一眼看到就觉得很不错，后来再也没有找到与之相符的主题。选择一番之后，更新到了现在的主题<a href="https://github.com/wa-ri/hexo-theme-ztopic" target="_blank" rel="noopener">ztopic</a>,但是这里面的一些样式跟我预想中的还是有些差异，遂对此主题进行一些小改动。</p>
+<pre><code>### 更换字体</code></pre><p>​        更换字体有两个要点，一是要找到源代码中存放字体的文件和位置，二是选择到自己心仪的字体。</p>
+<p>​        说到找到存放字体的文件，由于每个主题的结构不是完全相同的，跟字体相关的文件的写法和位置也不一定一样。那么要怎么快速定位到源文件呢？首先我们在原来的博客界面检查文字字体，可以看到这里的段落的字体如下图所示：</p>
+<p><img src="_posts/%E5%8D%9A%E5%AE%A2%E5%AD%97%E4%BD%93/findFont.png" alt="1572869928305"></p>
+<p>此时我并不能完全确定这个字体就是文中段落的字体，所以我将其中一个字体稍微修改，文中也的确生效了，那么可以确定这个就是我需要修改的字体。</p>
+<p>选择其中第一个字体”Montserrat”检索一下，可以看到有三个文件包含这个结果：</p>
+<p><img src="_posts/%E5%8D%9A%E5%AE%A2%E5%AD%97%E4%BD%93/getFont.png" alt="1572870256048"></p>
+<p>这其中的css文件是运行hexo generate生成的，第三个scss文件就是源代码。打开相应的代码可以看到这个字体是包含在变量”$global-font-family”之中的：</p>
+<p><img src="_posts/%E5%8D%9A%E5%AE%A2%E5%AD%97%E4%BD%93/fontCode.png" alt="1572870452299"></p>
+<p>这里其实已经是我更换后的字体了，我初始查找的时候其实是用的图1中的一整套font-family，对应到现在就是”Montserrat”, “Noto Serif SC”, sans-serif，在我写这篇文章的时候发现这样做并不可靠，因为在浏览器中这些字体显示的是双引号，而在代码中我不知不觉将他们改成了双引号。</p>
+<p>回到正题，我检索到这个文件之后大概摸索了一下这几个变量，同样的，修改一下其中的一个字体，刷新自己的博客后字体生效了，那么这个”$global-font-family”就是文章相关字体。</p>
+<p>现在更换我们需要的字体，由于windows自带字体并不是很多，我们可以到网上寻找一些自己喜欢的字体。这里我是在google font上浏览了一番，发现Noto系列的字体还不错，同时在搜寻字体的过程中发现了一个下载字体的网站<a href="[google-webfonts-helper](https://google-webfonts-helper.herokuapp.com/)">google webfonts helper</a>，这个网站不像前者需要科学上网，相比前者只是不能同时预览多种字体。源文件里是使用@font-face的方法引用的字体，这个方法不懂的话大概查一下就知道了，看了下google webfonts helper的实例，正好就是@font-size，所以将字体下载下来预计就ok了。</p>
+<p><img src="_posts/%E5%8D%9A%E5%AE%A2%E5%AD%97%E4%BD%93/downloadFont.png" alt="1572872036230"></p>
+<p>这里要注意，第一项中默认的字符集是latin，由于我寻找的中文字符集，所以需要将选项修改为chinese-simplified，再将原latin去掉</p>
+<p><img src="_posts/%E5%8D%9A%E5%AE%A2%E5%AD%97%E4%BD%93/selectLanguage.png" alt="1572872228423"></p>
+<p>下载完之后将对应的woff文件放到相应的font文件夹中，再使用@font-face定义，最后在变量中引用，就可以了。</p>
+<p>这里的三个字体分别是我的英文字符集，简体中文字符集和字体族名：</p>
+<p><img src="_posts/%E5%8D%9A%E5%AE%A2%E5%AD%97%E4%BD%93/font.png" alt="1572872430572"></p>
 
   </div>
   <div class="post-footer">the end</div>
@@ -121,10 +131,10 @@
           
   <nav class="pagination post-nav">
     
-      <a href="/2019/11/04/%E5%8D%9A%E5%AE%A2%E5%AD%97%E4%BD%93/">
-        <span class="prev-post"><i class="iconfont icon-back"></i>更换个人(hexo)博客字体</span>
-      </a>
     
+      <a href="/2019/10/31/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
+        <span class="next-post">我的第一篇博客<i class="iconfont icon-more"></i></span>
+      </a>
     
   </nav>
 
