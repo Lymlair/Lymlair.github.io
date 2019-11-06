@@ -110,7 +110,7 @@
 <p><img src="/2019/11/04/blogFont/fontCode.png" alt="1572870452299"></p>
 <p>这里其实已经是我更换后的字体了，我初始查找的时候其实是用的图1中的一整套font-family，对应到现在就是”Montserrat”, “Noto Serif SC”, sans-serif，在我写这篇文章的时候发现这样做并不可靠，因为在浏览器中这些字体显示的是双引号，而在代码中我不知不觉将他们改成了双引号。</p>
 <p>回到正题，我检索到这个文件之后大概摸索了一下这几个变量，同样的，修改一下其中的一个字体，刷新自己的博客后字体生效了，那么这个”$global-font-family”就是文章相关字体。</p>
-<p>现在更换我们需要的字体，由于windows自带字体并不是很多，我们可以到网上寻找一些自己喜欢的字体。这里我是在google font上浏览了一番，发现Noto系列的字体还不错，同时在搜寻字体的过程中发现了一个下载字体的网站<a href="[google-webfonts-helper](https://google-webfonts-helper.herokuapp.com/)">google webfonts helper</a>，这个网站不像前者需要科学上网，相比前者只是不能同时预览多种字体。源文件里是使用@font-face的方法引用的字体，这个方法不懂的话大概查一下就知道了，看了下google webfonts helper的实例，正好就是@font-size，所以将字体下载下来预计就ok了。</p>
+<p>现在更换我们需要的字体，由于windows自带字体并不是很多，我们可以到网上寻找一些自己喜欢的字体。这里我是在google font上浏览了一番，发现Noto系列的字体还不错，同时在搜寻字体的过程中发现了一个下载字体的网站<a href="https://google-webfonts-helper.herokuapp.com/" target="_blank" rel="noopener">google-webfonts-helper</a>，这个网站不像前者需要科学上网，相比前者只是不能同时预览多种字体。源文件里是使用@font-face的方法引用的字体，这个方法不懂的话大概查一下就知道了，看了下google webfonts helper的实例，正好就是@font-size，所以将字体下载下来预计就ok了。</p>
 <p><img src="/2019/11/04/blogFont/downloadFont.png" alt="1572872036230"></p>
 <p>这里要注意，第一项中默认的字符集是latin，由于我寻找的中文字符集，所以需要将选项修改为chinese-simplified，再将原latin去掉</p>
 <p><img src="/2019/11/04/blogFont/selectLanguage.png" alt="1572872228423"></p>

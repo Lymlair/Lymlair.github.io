@@ -332,7 +332,8 @@ header.site-nav {
     z-index: 2;
     font-size: 65px;
     height: 500px;
-    background: #34495e;
+    background: url("../../images/page-cover.jpg") no-repeat;
+    background-size: cover;
     color: #fff;
     text-align: center; }
     .banner .show div.banner-title {
